@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+button.primary {
+  padding: 10px;
+  border: solid 1px black;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+input, select {
+  border: solid 1px black;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 400px;
+}

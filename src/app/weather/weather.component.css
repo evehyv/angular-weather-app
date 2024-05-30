@@ -1,0 +1,26 @@
+#weather-component {
+  width: 30%;
+  padding: 10px 10px 10px 40px;
+}
+
+#weather-component div {
+  padding-bottom: 20px;
+}
+
+#weather-component label {
+  padding: 10px;
+}
+
+.weather-card {
+  background: linear-gradient(-180deg, rgb(170, 218, 233) 0%, rgb(225, 238, 242) 100%);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.weather-card h2 {
+  padding-bottom: 20px;
+}
+
+.weather-card p {
+  padding-bottom: 10px;
+}

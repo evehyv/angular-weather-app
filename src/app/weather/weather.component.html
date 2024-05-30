@@ -1,0 +1,30 @@
+<div id="weather-component">
+  <div>
+    <input type="text" placeholder="Enter city name" [(ngModel)]="city">
+    <button class="primary" type="button" (click)="getWeatherByCityName()">Get Weather</button>
+  </div>
+  <div>
+    <label for="units">Select Units:</label>
+    <select id="units" (change)="toggleUnits()">
+      <option [value]="'metric'" [selected]="units === 'metric'">Metric (°C)</option>
+      <option [value]="'imperial'" [selected]="units === 'imperial'">Imperial (°F)</option>
+    </select>
+  </div>
+  <div *ngIf="cities && cities.length > 0">
+    <p>{{ errorMessage }}</p>
+    <ul>
+      <li *ngFor="let cityItem of cities">
+        <a href="#" (click)="getWeatherByCityId(cityItem.id)">{{ cityItem.name }}, {{ cityItem.sys.country }}</a>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="weather" class="weather-card">
+    <h2>Weather in {{ weather.name }}, {{ weather.sys.country }}</h2>
+    <p>Temperature: {{ weather.main.temp }} {{ units === 'metric' ? '°C' : '°F' }}</p>
+    <p>Humidity: {{ weather.main.humidity }} %</p>
+    <p>Condition: {{ weather.weather[0].description }}</p>
+  </div>
+  <div *ngIf="errorMessage && (!cities || cities.length === 0)">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>
